@@ -1,6 +1,6 @@
 # BitsNBolts Emotionbot 
 
-### What is the project about? 
+## What is the project about? 
 The project is about making an installation for the event BitsNBolts. 
 My project, the name is still a little unclear, the EmotionBot, is about turning an everyday machine against its user. 
 This is simulated by the bot showing emotions and pretending it doesn't feel like doing things. 
@@ -21,10 +21,15 @@ https://gcore.com/support/articles/4408223538321/
 
 If you want to create the SSH connection, do it via the IP address. This will make connecting to the Raspi much faster and more convenient (if you do it via local, it may take 5 minutes just to connect). 
 
-* Enter Raspi via Key: 
+**Enter Raspi via Key** 
 To create a key-pair, do the following things 
 In your terminal (assuming it is a Linux-based terminal) type the command ``ssh-keygen``.
 This will generate a key pair for you. 
 After that click (if you think you don't need a password) just press ENTER. Otherwise, read what the terminal says. 
 
-Translated with www.DeepL.com/Translator (free version)
+**Den Public Key auf den Raspi kopieren:** 
+Für das schau dir dieses Tutorial an: 
+https://pimylifeup.com/raspberry-pi-ssh-keys/
+(es gibt verschiedene Möglichkeiten.)
+
+
