@@ -141,10 +141,15 @@
 
 
 from subprocess import Popen
+import pygame
 # from RPi import GPIO
 
 VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
 video_player = Popen(['vlc', '--fullscreen', '--loop',
                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
-video_player.kill()
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.unicode == 'e':
+                print('du hast die richtige taste gedrückt')
