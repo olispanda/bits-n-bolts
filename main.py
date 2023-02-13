@@ -1,9 +1,11 @@
-# from moviepy.editor import *
-# import pygame
+# # from moviepy.editor import *
+# # import pygame
 # import moviepy
-# # from pynput import keyboard
+# # # from pynput import keyboard
 
-# # screen.fill((0, 0, 0))e
+# import moviepy.editor as mp
+# import pygame
+# import sys
 # screen = pygame.display.set_mode((800, 600))
 # video = moviepy.editor.VideoFileClip("videos/test-720.mp4")
 # let = currentSecond = 1
@@ -15,76 +17,132 @@
 #                 print('du hast die richtige taste gedrückt')
 #     currentSecond = currentSecond + 1
 
+# # # while True:
+# # #     # The event listener will be running in this block
+# # #     with keyboard.Events() as events:
+# # #         event = events.get(1.0)
+# # #         if event is None:
+# # #             print('You did not press a key within one second')
+# # #             started = True
+# # #             if started is True:
+# # #                 StartVideo()
+# # #         else:
+# # #             print('Received event {}'.format(event))
+
+# #     # if !started
+# #     # startVideo()
+
+# # #     with keyboard.Events() as events:
+# # #         for event in events:
+# # #             print('Received event {}'.format(event))
+
+# #     # if keyboard.press('shift'):
+# #     #     print("Test")
+# #     #     break
+
+# #     # clip = VideoFileClip('videos/test.mp4').resize((1920, 1080))
+# #     # clip.preview()
+# #     # pygame.quit()
+
+# #     # if (event.type == pygame.KEYDOWN):
+# #     #     if (event.type == pygame.K_e):
+# #     #         break
+
+# # # function startVideo() {
+
+# # # screen = pygame.display.set_mode((800, 600))
+# # # screen.fill((0, 0, 0))
+# # # video = moviepy.editor.VideoFileClip("videos/test.mp4")
+# # # video.preview()
+# # # started = true
+# # # }
+
+
+# # pygame.init()
+
+# # screen = pygame.display.set_mode((640, 480))
+
+# # clock = pygame.time.Clock()
+
+# # video = mp.VideoFileClip("videos/test-720.mp4")
+
+# # video.fps = 30
+
+# # frames = []
+
+# # for i in range(int(video.fps * video.duration)):
+# #     frames.append(video.get_frame(i / video.fps))
+
+# # frame_index = 0
+
 # # while True:
-# #     # The event listener will be running in this block
-# #     with keyboard.Events() as events:
-# #         event = events.get(1.0)
-# #         if event is None:
-# #             print('You did not press a key within one second')
-# #             started = True
-# #             if started is True:
-# #                 StartVideo()
-# #         else:
-# #             print('Received event {}'.format(event))
+# #     for event in pygame.event.get():
+# #         if event.type == pygame.QUIT:
+# #             pygame.quit()
+# #             sys.exit()
 
-#     # if !started
-#     # startVideo()
+# #     screen.blit(frames[frame_index], (0, 0))
+# #     pygame.display.update()
 
-# #     with keyboard.Events() as events:
-# #         for event in events:
-# #             print('Received event {}'.format(event))
+# #     frame_index = (frame_index + 1) % len(frames)
 
-#     # if keyboard.press('shift'):
-#     #     print("Test")
-#     #     break
+# #     clock.tick(30)
 
-#     # clip = VideoFileClip('videos/test.mp4').resize((1920, 1080))
-#     # clip.preview()
-#     # pygame.quit()
+# import cv2
 
-#     # if (event.type == pygame.KEYDOWN):
-#     #     if (event.type == pygame.K_e):
-#     #         break
+# cap = cv2.VideoCapture("videos/test-720.mp4")
 
-# # function startVideo() {
+# while True:
+#     ret, frame = cap.read()
 
-# # screen = pygame.display.set_mode((800, 600))
-# # screen.fill((0, 0, 0))
-# # video = moviepy.editor.VideoFileClip("videos/test.mp4")
-# # video.preview()
-# # started = true
-# # }
+#     if not ret:
+#         break
 
-import sys
-import pygame
-import moviepy.editor as mp
+#     cv2.imshow("video", frame)
 
-pygame.init()
+#     if cv2.waitKey(1) & 0xFF == ord("q"):
+#         break
 
-screen = pygame.display.set_mode((640, 480))
+# cap.release()
+# cv2.destroyAllWindows()
 
-clock = pygame.time.Clock()
+# import pyglet
 
-video = mp.VideoFileClip("videos/test-720.mp4")
+# # width of window
+# width = 500
 
-video.fps = 30
+# # height of window
+# height = 500
 
-frames = []
+# # caption i.e title of the window
+# title = "Geeksforgeeks"
 
-for i in range(int(video.fps * video.duration)):
-    frames.append(video.get_frame(i / video.fps))
+# # creating a window
+# window = pyglet.window.Window(width, height, title)
 
-frame_index = 0
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+# # video path
+# vidPath = "videos/test-720.mp4"
 
-    screen.blit(frames[frame_index], (0, 0))
-    pygame.display.update()
+# # creating a media player object
+# player = pyglet.media.Player()
 
-    frame_index = (frame_index + 1) % len(frames)
+# # creating a source object
+# source = pyglet.media.StreamingSource()
 
-    clock.tick(30)
+# # load the media from the source
+# MediaLoad = pyglet.media.load(vidPath)
+
+# # add this media in the queue
+# player.queue(MediaLoad)
+
+# # play the video
+# player.play()
+
+
+from subprocess import Popen
+
+VIDEO_CLIP_IDLE = "videos/test-720.mp4"
+
+video_player = Popen(['vlc', '--fullscreen', '--loop',
+                     '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
