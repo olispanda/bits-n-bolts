@@ -141,8 +141,10 @@
 
 
 from subprocess import Popen
+# from RPi import GPIO
 
 VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
 video_player = Popen(['vlc', '--fullscreen', '--loop',
                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+video_player.kill()
