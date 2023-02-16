@@ -157,6 +157,8 @@ while True:
     if GPIO.input(24) == 0:
         # Ausschalten
         GPIO.output(23, GPIO.LOW)
+        if GPIO.output(23, GPIO.LOW):
+            print("Der Knopf wurde nicht gedrückt")
     else:
         # Einschalten
         GPIO.output(23, GPIO.HIGH)
