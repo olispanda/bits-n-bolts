@@ -140,16 +140,25 @@
 # player.play()
 
 
-from subprocess import Popen
-import pygame
-# from RPi import GPIO
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(23, GPIO.OUT)
+
+GPIO.output(23, GPIO.HIGH)
+GPIO.output(23, GPIO.LOW)
+
+# from subprocess import Popen
+# # import pygame
+# # from RPi import GPIO
 
 # VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
 #                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-                print('du hast die richtige taste gedrückt')
+# while True:
+#     for event in pygame.event.get():
+#         if event.type == pygame.KEYDOWN:
+#             if event.unicode == 'x':
+#                 print('du hast die richtige taste gedrückt')

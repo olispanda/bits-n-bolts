@@ -7,8 +7,7 @@ This is simulated by the bot showing emotions and pretending it doesn't feel lik
 
 ### Set-Up   
 In this Exampel i use brew to downdload phyton but you do you (you just have to google what the terninal-commands are for your Package-Manager.)
-```$ brew install python```
-```$ pip3 install.... (not clear at the moment)```
+```$ brew install python,       $ pip3 install.... (not clear at the moment)```
 
 ### SSH Connection 
 If you don't know how to create an SSH connection yet, check this out: 
