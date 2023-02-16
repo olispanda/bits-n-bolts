@@ -142,11 +142,14 @@
 
 import RPi.GPIO as GPIO
 import time
+from subprocess import Popen
 
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
+
+VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
 while True:
     if GPIO.input(24) == 0:
@@ -155,12 +158,14 @@ while True:
     else:
         # Einschalten
         GPIO.output(23, GPIO.HIGH)
+        if GPIO.output(23, GPIO.HIGH):
+            video_player = Popen(['vlc', '--fullscreen', '--loop',
+                                  '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
-# from subprocess import Popen
+
 # # import pygame
 # # from RPi import GPIO
 
-# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
 #                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
