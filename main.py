@@ -149,22 +149,18 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
-VIDEO_CLIP_IDLE = "videos/test-720.mp4"
-video_player = Popen(['vlc', '--fullscreen', '--loop',
-                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
-
-video_player.pause()
-
+# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
+# video_player = Popen(['vlc', '--fullscreen', '--loop',
+#                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
 while True:
     # if button off
     if GPIO.input(24) == 0:
         GPIO.output(23, GPIO.LOW)
-        video_player.pau()
+        video_player.pause()
     # if button on
     else:
         GPIO.output(23, GPIO.HIGH)
-        video_player.play()
 
 
 # # import pygame
