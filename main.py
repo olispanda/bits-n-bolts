@@ -151,6 +151,7 @@ GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
 VIDEO_CLIP_IDLE = "videos/test-720.mp4"
+DIE_AUSGABE = print("Der Knopf wurde gedrückt")
 
 while True:
     if GPIO.input(24) == 0:
@@ -160,9 +161,10 @@ while True:
         # Einschalten
         GPIO.output(23, GPIO.HIGH)
         if GPIO.output(23, GPIO.HIGH):
-            GPIO.cleanup()
-            video_player = Popen(['vlc', '--fullscreen', '--loop',
-                                  '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+            DIE_AUSGABE
+            if DIE_AUSGABE:
+                video_player = Popen(['vlc', '--fullscreen', '--loop',
+                                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
 
 # # import pygame
