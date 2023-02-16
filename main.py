@@ -140,6 +140,7 @@
 # player.play()
 
 
+from socket import AF_NETROM
 import RPi.GPIO as GPIO
 import time
 from subprocess import Popen
@@ -159,6 +160,7 @@ while True:
         # Einschalten
         GPIO.output(23, GPIO.HIGH)
         if GPIO.output(23, GPIO.HIGH):
+            GPIO.cleanup()
             video_player = Popen(['vlc', '--fullscreen', '--loop',
                                   '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
