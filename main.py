@@ -140,37 +140,35 @@
 # player.play()
 
 
-# import RPi.GPIO as GPIO
-# import time
-# from subprocess import Popen
-
-# GPIO.setmode(GPIO.BCM)
-
-# GPIO.setup(23, GPIO.OUT)
-# GPIO.setup(24, GPIO.IN)
+import RPi.GPIO as GPIO
+import time
 from subprocess import Popen
 
-VIDEO_CLIP_IDLE = "videos/test-720.mp4"
-video_player = Popen(["--key-play-pause", VIDEO_CLIP_IDLE])
+GPIO.setmode(GPIO.BCM)
 
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(24, GPIO.IN)
 
-# while True:
-#     # if button off
-#     if GPIO.input(24) == 0:
-#         GPIO.output(23, GPIO.LOW)
-#     # if button on
-#     else:
-#         GPIO.output(23, GPIO.HIGH)
-#         if GPIO.output(23, GPIO.HIGH):
-#             print("Das Video blockt nicht")
-
-# # import pygame
-# # from RPi import GPIO
-
+# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
-#                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
-# while True:
-#     for event in pygame.event.get():
-#         if event.type == pygame.KEYDOWN:
-#             if event.unicode == 'x':
-#                 print('du hast die richtige taste gedrückt')
+#                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+
+
+while True:
+    # if button off
+    if GPIO.input(24) == 0:
+        GPIO.output(23, GPIO.LOW)
+    # if button on
+    else:
+        GPIO.output(23, GPIO.HIGH)
+
+        # # import pygame
+        # # from RPi import GPIO
+
+        # video_player = Popen(['vlc', '--fullscreen', '--loop',
+        #                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+        # while True:
+        #     for event in pygame.event.get():
+        #         if event.type == pygame.KEYDOWN:
+        #             if event.unicode == 'x':
+        #                 print('du hast die richtige taste gedrückt')
