@@ -161,14 +161,16 @@ while True:
     # if button on
     else:
         GPIO.output(23, GPIO.HIGH)
+        if GPIO.input(24) == GPIO.HIGH:
+            print("button printet")
 
-        # # import pygame
-        # # from RPi import GPIO
+            # # import pygame
+            # # from RPi import GPIO
 
-        # video_player = Popen(['vlc', '--fullscreen', '--loop',
-        #                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
-        # while True:
-        #     for event in pygame.event.get():
-        #         if event.type == pygame.KEYDOWN:
-        #             if event.unicode == 'x':
-        #                 print('du hast die richtige taste gedrückt')
+            # video_player = Popen(['vlc', '--fullscreen', '--loop',
+            #                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+            # while True:
+            #     for event in pygame.event.get():
+            #         if event.type == pygame.KEYDOWN:
+            #             if event.unicode == 'x':
+            #                 print('du hast die richtige taste gedrückt')
