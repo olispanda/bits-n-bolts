@@ -151,8 +151,7 @@
 from subprocess import Popen
 
 VIDEO_CLIP_IDLE = "videos/test-720.mp4"
-video_player = Popen(['vlc', '--fullscreen', '--loop',
-                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+video_player = Popen(["--key-play-pause", VIDEO_CLIP_IDLE])
 
 
 # while True:
