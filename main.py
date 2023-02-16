@@ -162,9 +162,10 @@ while True:
         GPIO.output(23, GPIO.HIGH)
         if GPIO.output(23, GPIO.HIGH):
             DIE_AUSGABE
-            if DIE_AUSGABE:
-                video_player = Popen(['vlc', '--fullscreen', '--loop',
-                                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+
+            # if DIE_AUSGABE:
+            #     video_player = Popen(['vlc', '--fullscreen', '--loop',
+            #                           '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
 
 # # import pygame
