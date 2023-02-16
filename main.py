@@ -140,7 +140,6 @@
 # player.play()
 
 
-from socket import AF_NETROM
 import RPi.GPIO as GPIO
 import time
 from subprocess import Popen
