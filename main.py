@@ -144,10 +144,17 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(23, GPIO.OUT)
 
-GPIO.output(23, GPIO.HIGH)
-GPIO.output(23, GPIO.LOW)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(24, GPIO.IN)
+
+while True:
+    if GPIO.input(24) == 0:
+        # Ausschalten
+        GPIO.output(23, GPIO.LOW)
+    else:
+        # Einschalten
+        GPIO.output(23, GPIO.HIGH)
 
 # from subprocess import Popen
 # # import pygame
