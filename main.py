@@ -150,7 +150,7 @@ GPIO.setup(24, GPIO.IN)
 
 ausgeschalten = GPIO.input(24) == 0
 
-VIDEO_CLIP_IDLE = "videos/test-720.mp4"
+# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
 while True:
     if ausgeschalten:
@@ -159,9 +159,9 @@ while True:
     else:
         # Einschalten
         GPIO.output(23, GPIO.HIGH)
-        video_player = Popen(['vlc', '--fullscreen', '--loop',
-                              '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
-s
+        # video_player = Popen(['vlc', '--fullscreen', '--loop',
+        #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+
 
 # import pygame
 # from RPi import GPIO
