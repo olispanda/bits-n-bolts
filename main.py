@@ -151,9 +151,9 @@ GPIO.setup(24, GPIO.IN)
 
 VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 video_player = Popen(['vlc', '--fullscreen', '--loop',
-                      '--no-video-title-show', '--no-audio', '--quiet', '--start-paused', VIDEO_CLIP_IDLE])
+                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
-# video_player.pause()
+video_player.pause()
 
 
 while True:
@@ -164,7 +164,7 @@ while True:
     # if button on
     else:
         GPIO.output(23, GPIO.HIGH)
-        # video_player.play()
+        video_player.play()
 
 
 # # import pygame
