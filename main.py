@@ -139,7 +139,7 @@
 # # play the video
 # player.play()
 
-from subprocess import Popen
+
 import RPi.GPIO as GPIO
 import time
 
@@ -148,25 +148,22 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
-ausgeschalten = GPIO.input(24) == 0
-
-# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
-
 while True:
-    if ausgeschalten:
+    if GPIO.input(24) == 0:
         # Ausschalten
         GPIO.output(23, GPIO.LOW)
     else:
         # Einschalten
         GPIO.output(23, GPIO.HIGH)
-        # video_player = Popen(['vlc', '--fullscreen', '--loop',
-        #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
+# from subprocess import Popen
+# # import pygame
+# # from RPi import GPIO
 
-# import pygame
-# from RPi import GPIO
+# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 
-
+# video_player = Popen(['vlc', '--fullscreen', '--loop',
+#                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 # while True:
 #     for event in pygame.event.get():
 #         if event.type == pygame.KEYDOWN:
