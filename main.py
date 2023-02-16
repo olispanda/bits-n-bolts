@@ -151,7 +151,7 @@ GPIO.setup(24, GPIO.IN)
 
 VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 video_player = Popen(['vlc', '--fullscreen', '--loop',
-                      '--no-video-title-show', '--no-audio', '--quiet', '--no-start-paused', VIDEO_CLIP_IDLE])
+                      '--no-video-title-show', '--no-audio', '--quiet', '--start-paused', VIDEO_CLIP_IDLE])
 
 # video_player.pause()
 
