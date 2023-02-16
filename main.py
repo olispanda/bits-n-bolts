@@ -161,8 +161,8 @@ while True:
     # if button on
     else:
         GPIO.output(23, GPIO.HIGH)
-        if GPIO.input(24) == GPIO.HIGH:
-            print("button printet")
+        if GPIO.HIGH:
+            print("Button-Press")
 
             # # import pygame
             # # from RPi import GPIO
