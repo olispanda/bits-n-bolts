@@ -142,6 +142,7 @@
 # import thread
 import RPi.GPIO as GPIO
 import time
+import vlc-ctrl
 from subprocess import Popen
 
 
@@ -167,6 +168,7 @@ while True:
         GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
+            vlc-ctrl pause
             buttonPressed = True
 
         # # import pygame
