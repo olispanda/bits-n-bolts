@@ -14,8 +14,7 @@ GPIO.setup(24, GPIO.IN)
 #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
 video_player = Popen(['vlc', '--intf', 'rc'], stdin=PIPE)
-out, err = video_player.communicate(input=b'play')
-print(out)
+video_player.stdin.write('help')
 
 
 print("yolo")
