@@ -38,6 +38,9 @@ while True:
             print('xolo2')
             videoplayer.sendline('pause')
             buttonPressed = True
+            if buttonPressed == True:
+                videoplayer.sendline('add videos/test2.mp4')
+                break
 
         # # import pygame
         # # from RPi import GPIO
