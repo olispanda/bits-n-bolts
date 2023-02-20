@@ -1,4 +1,5 @@
 # import thread
+from multiprocessing.connection import wait
 import RPi.GPIO as GPIO
 import time
 from subprocess import Popen, PIPE
@@ -40,6 +41,7 @@ while True:
             buttonPressed = True
             if buttonPressed == True:
                 videoplayer.sendline('add videos/test2.mp4')
+                wait(10)
                 print('yolo3')
                 # break
 
