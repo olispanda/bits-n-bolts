@@ -18,7 +18,6 @@ GPIO.setup(24, GPIO.IN)
 # video_player.stdin.write('help')
 
 videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show --loop')
-# - -no-audio
 videoplayer.sendline('add videos/test-720.mp4')
 videoplayer.sendline('play')
 
