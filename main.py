@@ -1,7 +1,7 @@
 # import thread
 import RPi.GPIO as GPIO
 import time
-from subprocess import Popen
+from subprocess import Popen, PIPE
 
 
 GPIO.setmode(GPIO.BCM)
@@ -13,8 +13,10 @@ GPIO.setup(24, GPIO.IN)
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
 #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
-video_player = Popen(['vlc', '--intf', 'rc'])
-pause = Popen(['echo', 'pause'])
+video_player = Popen(['vlc', '--intf', 'rc'], stdin=PIPE)
+out, err = video_player.communicate(input=b'play')
+print(out)
+
 
 print("yolo")
 
