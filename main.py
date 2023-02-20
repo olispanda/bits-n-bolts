@@ -17,9 +17,10 @@ GPIO.setup(24, GPIO.IN)
 # video_player = Popen(['vlc', '--intf', 'rc'], stdin=PIPE)
 # video_player.stdin.write('help')
 
-child = pexpect.spawn('vlc --intf rc')
-child.sendline('add videos/test-720.mp4')
-child.sendline('play')
+videoPlayer = pexpect.spawn(
+    'vlc --intf rc --no-video-title-show --loop --no-audio')
+videoPlayer.sendline('add videos/test-720.mp4')
+videoPlayer.sendline('play')
 
 
 print("yolo")
@@ -36,7 +37,7 @@ while True:
         GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
-            child.sendline('pause')
+            videoPlayer.sendline('pause')
             buttonPressed = True
 
         # # import pygame
