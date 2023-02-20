@@ -36,6 +36,7 @@ while True:
         GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
+            child.sendline('pause')
             buttonPressed = True
 
         # # import pygame
