@@ -150,9 +150,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
-# VIDEO_CLIP_IDLE = "videos/test-720.mp4"
-# video_player = Popen(['vlc', '--fullscreen', '--loop',
-#                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+VIDEO_CLIP_IDLE = "videos/test-720.mp4"
+video_player = Popen(['vlc', '--fullscreen', '--loop',
+                      '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
+print("yolo")
 
 
 while True:
