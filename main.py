@@ -155,15 +155,19 @@ video_player = Popen(['vlc', '--fullscreen', '--loop',
                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 print("yolo")
 
+buttonPressed = False
 
 while True:
     # if button off
     if GPIO.input(24) == 0:
         GPIO.output(23, GPIO.LOW)
+        buttonPressed = False
     # if button on
     else:
         GPIO.output(23, GPIO.HIGH)
-        print("yolo2")
+        if buttonPressed == False:
+            print('xolo2')
+            buttonPressed = True
 
         # # import pygame
         # # from RPi import GPIO
