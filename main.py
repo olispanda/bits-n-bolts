@@ -142,7 +142,6 @@
 # import thread
 import RPi.GPIO as GPIO
 import time
-import vlc-ctrl
 from subprocess import Popen
 
 
