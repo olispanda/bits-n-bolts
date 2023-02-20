@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 from subprocess import Popen, PIPE
+import pexpect
 
 
 GPIO.setmode(GPIO.BCM)
@@ -13,8 +14,11 @@ GPIO.setup(24, GPIO.IN)
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
 #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
-video_player = Popen(['vlc', '--intf', 'rc'], stdin=PIPE)
-video_player.stdin.write('help')
+# video_player = Popen(['vlc', '--intf', 'rc'], stdin=PIPE)
+# video_player.stdin.write('help')
+
+child = pexpect.spawn('vlc intf rc')
+child.sendline('help')
 
 
 print("yolo")
