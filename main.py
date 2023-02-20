@@ -154,7 +154,7 @@ GPIO.setup(24, GPIO.IN)
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
 #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
-video_player = Popen(['vlc', '--intf rc'])
+video_player = Popen('vlc --intf rc')
 video_player.communicate('add videos/test-720.mp4')
 video_player.communicate('play')
 print("yolo")
