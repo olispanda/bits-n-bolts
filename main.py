@@ -163,6 +163,7 @@ while True:
     # if button on
     else:
         GPIO.output(23, GPIO.HIGH)
+        print("yolo2")
 
         # # import pygame
         # # from RPi import GPIO
