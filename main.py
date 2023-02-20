@@ -44,7 +44,7 @@ while True:
                 videoplayer.sendline('add videos/test2.mp4')
                 sleep(10)
                 print('yolo3')
-                # break
+                break
 
         # # import pygame
         # # from RPi import GPIO
