@@ -14,7 +14,7 @@ GPIO.setup(24, GPIO.IN)
 #                       '--no-video-title-show', '--no-audio', '--quiet', VIDEO_CLIP_IDLE])
 
 video_player = Popen(['vlc', '--intf', 'rc'])
-pause = Popen('echo pause')
+pause = Popen(['echo', 'pause'])
 
 print("yolo")
 
