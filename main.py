@@ -17,8 +17,9 @@ GPIO.setup(24, GPIO.IN)
 # video_player = Popen(['vlc', '--intf', 'rc'], stdin=PIPE)
 # video_player.stdin.write('help')
 
-child = pexpect.spawn('vlc intf rc')
-child.sendline('help')
+child = pexpect.spawn('vlc --intf rc')
+child.sendline('add videos/test-720.mp4')
+child.sendline('play')
 
 
 print("yolo")
