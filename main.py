@@ -171,7 +171,6 @@ while True:
         GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
-            vlc-ctrl pause
             buttonPressed = True
 
         # # import pygame
