@@ -139,7 +139,7 @@
 # # play the video
 # player.play()
 
-import thread
+# import thread
 import RPi.GPIO as GPIO
 import time
 from subprocess import Popen
