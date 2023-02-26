@@ -1,7 +1,7 @@
 from time import sleep
 from moviepy.editor import *
 import threading
-import RPi.GPIO as GPIO
+import RPi.GPIO as GPIOs
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
@@ -18,6 +18,7 @@ def button():
         print("checking")
         if GPIO.input(24) == 1:
             GPIO.output(23, GPIO.HIGH)
+            print('button was pressed')
         else:
             pass
 
