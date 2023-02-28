@@ -4,24 +4,21 @@ import time
 from time import sleep
 from subprocess import Popen, PIPE
 import pexpect
+
+
 GPIO.setmode(GPIO.BCM)
+
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
-buttonPressed = False
-
-# _______________________________________________________________________
-
-videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show')
 
 
-def Video1():
-    videoplayer.sendline('add videos/test-720.mp4')
-    videoplayer.sendline('play')
+videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show --loop')
+videoplayer.sendline('add videos/test-720.mp4')
+videoplayer.sendline('play')
 
 
-# ________________________________________________________________________
 print("yolo")
-
+buttonPressed = False
 
 while True:
     if GPIO.input(24) == 0:
@@ -34,8 +31,9 @@ while True:
             print('xolo2')
             videoplayer.sendline('pause')
             buttonPressed = True
-        elif buttonPressed == True:
-            videoplayer.sendline('add videos/test2.mp4')
-            sleep(10)
-            print('yolo3')
-            buttonPressed == False
+
+            if buttonPressed == True:
+                videoplayer.sendline('add videos/test2.mp4')
+                sleep(10)
+                print('yolo3')
+                break
