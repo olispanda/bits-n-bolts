@@ -45,4 +45,4 @@ while True:
             sleep(10)
             print('yolo3')
             buttonPressed == False
-            Video1
+            videoplayer.sendline('play')
