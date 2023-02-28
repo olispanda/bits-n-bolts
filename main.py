@@ -10,8 +10,8 @@ import pexpect
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(24, GPIO.OUT)
-GPIO.setup(23, GPIO.IN)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(24, GPIO.IN)
 
 # VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
@@ -30,12 +30,12 @@ buttonPressed = False
 
 while True:
     # if button off
-    if GPIO.input(23) == 0:
-        GPIO.output(24, GPIO.LOW)
+    if GPIO.input(24) == 0:
+        GPIO.output(23, GPIO.LOW)
         buttonPressed = False
     # if button on
     else:
-        GPIO.output(24, GPIO.HIGH)
+        GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
             videoplayer.sendline('pause')
