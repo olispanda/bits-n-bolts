@@ -22,7 +22,6 @@ GPIO.setup(24, GPIO.IN)
 
 videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show --loop')
 videoplayer.sendline('add videos/test-720.mp4')
-# videoplayer.sendline('get_length')
 videoplayer.sendline('play')
 
 
@@ -45,7 +44,7 @@ while True:
                 videoplayer.sendline('add videos/test2.mp4')
                 sleep(10)
                 print('yolo3')
-                # break
+                break
 
         # # import pygame
         # # from RPi import GPIO
