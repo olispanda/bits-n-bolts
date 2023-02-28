@@ -11,14 +11,9 @@ GPIO.setup(24, GPIO.IN)
 videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show --loop')
 videoplayer.sendline('add videos/test-720.mp4')
 videoplayer.sendline('play')
-print("yolo")
 
+print("yolo")
 buttonPressed = False
-
-videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show')
-videoplayer.sendline('add videos/test-720.mp4')
-videoplayer.sendline('play')
-print("yolo")
 
 while True:
     if GPIO.input(24) == 0:
