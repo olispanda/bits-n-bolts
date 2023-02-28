@@ -16,14 +16,9 @@ buttonPressed = False
 # _______________________________________________________________________
 
 videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show')
+videoplayer.sendline('add videos/test-720.mp4 --loop')
+videoplayer.sendline('play')
 
-
-def Video1():
-    videoplayer.sendline('add videos/test-720.mp4 --loop')
-    videoplayer.sendline('play')
-
-
-Video1
 
 # ________________________________________________________________________
 
