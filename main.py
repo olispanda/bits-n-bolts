@@ -10,8 +10,8 @@ import pexpect
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(23, GPIO.OUT)
-GPIO.setup(24, GPIO.IN)
+GPIO.setup(24, GPIO.OUT)
+GPIO.setup(23, GPIO.IN)
 
 # VIDEO_CLIP_IDLE = "videos/test-720.mp4"
 # video_player = Popen(['vlc', '--fullscreen', '--loop',
