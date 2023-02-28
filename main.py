@@ -25,7 +25,7 @@ while True:
             print('xolo2')
             videoplayer.sendline('pause')
             buttonPressed = True
-        elif buttonPressed == True:
-            videoplayer.sendline('add videos/test2.mp4')
-            sleep(10)
-            print('yolo3')
+            if buttonPressed == True:
+                videoplayer.sendline('add videos/test2.mp4')
+                sleep(10)
+                print('yolo3')
