@@ -30,12 +30,12 @@ buttonPressed = False
 
 while True:
     # if button off
-    if GPIO.input(24) == 0:
-        GPIO.output(23, GPIO.LOW)
+    if GPIO.input(23) == 0:
+        GPIO.output(24, GPIO.LOW)
         buttonPressed = False
     # if button on
     else:
-        GPIO.output(23, GPIO.HIGH)
+        GPIO.output(24, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
             videoplayer.sendline('pause')
