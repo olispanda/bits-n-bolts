@@ -29,4 +29,3 @@ while True:
                 videoplayer.sendline('add videos/test2.mp4')
                 sleep(10)
                 print('yolo3')
-                videoplayer.sendline('play')
