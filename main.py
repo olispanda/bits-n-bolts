@@ -12,8 +12,7 @@ GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
 videoplayer = pexpect.spawn('vlc --intf rc --no-video-title-show --loop')
-videoplayer.sendline('add videos/test-720.mp4')
-videoplayer.sendline('play')
+videoplayer.sendline('play videos/test-720.mp4')
 
 print("yolo")
 buttonPressed = False
@@ -24,7 +23,6 @@ while True:
         GPIO.output(23, GPIO.LOW)
         buttonPressed = False
         print('yolo4')
-        pause(0.5)
 
     # if button is pressed:
     else:
