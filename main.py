@@ -12,8 +12,7 @@ GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
 videoplayer1 = pexpect.spawn(
-    'vlc --no-video-title-show --loop bits-n-bolts/videos-test2.mp4')
-videoplayer1.sendline('add videos/test-720.mp4')
+    'vlc --no-video-title-show --loop bits-n-bolts/videos-test-720.mp4')
 videoplayer1.sendline('play')
 
 
@@ -31,8 +30,12 @@ while True:
         GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
             print('xolo2')
-            videoplayer1.sendline('pause')
-            videoplayer2 = pexpect.spawn('vlc --intf rc --no-video-title-show')
-            videoplayer2.sendline('add videos/test-720.mp4')
+            videoplayer1.sendline('quit')
+            videoplayer2 = pexpect.spawn('')
+            videoplayer2.sendline('add videos/test2.mp4')
+            sleep(10)
+            videoplayer2.sendline('quit')
+            videoplayer1 = pexpect.spawn(
+                'vlc --no-video-title-show --loop bits-n-bolts/videos-test2.mp4')
             videoplayer1.sendline('play')
             print('yolo3')
