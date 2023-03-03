@@ -12,8 +12,8 @@ GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.IN)
 
 videoplayer1 = pexpect.spawn(
-    'vlc --no-video-title-show --loop bits-n-bolts/videos/video1_2.mp4')
-videoplayer1.sendline('add videos/video1_2.mp4')
+    'vlc --no-video-title-show --loop bits-n-bolts/videos/video1.mp4')
+videoplayer1.sendline('add videos/video1.mp4')
 videoplayer1.sendline('play')
 
 
@@ -30,7 +30,6 @@ while True:
     else:
         GPIO.output(23, GPIO.HIGH)
         if buttonPressed == False:
-            # try:
             print('xolo2')
             videoplayer1.sendline('quit')
             videoplayer1.close()
@@ -41,12 +40,7 @@ while True:
             videoplayer2.sendline('quit')
             videoplayer2.close()
             videoplayer1 = pexpect.spawn(
-                'vlc --no-video-title-show --loop bits-n-bolts/videos/video1_2.mp4')
-            videoplayer1.sendline('add videos/video1_2.mp4')
+                'vlc --no-video-title-show --loop bits-n-bolts/videos/video1.mp4')
+            videoplayer1.sendline('add videos/video1.mp4')
             videoplayer1.sendline('play')
             print('yolo3')
-            # except:
-            #     print("try catch failed")
-            #     # killall
-            # finally:
-            #     print("End of try catch: finally")
