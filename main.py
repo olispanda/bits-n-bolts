@@ -36,7 +36,7 @@ while True:
             videoplayer2 = pexpect.spawn(
                 'vlc --no-video-title-show bits-n-bolts/videos/video2.mp4')
             videoplayer2.sendline('add videos/video2.mp4')
-            sleep(29)
+            sleep(42)
             videoplayer2.sendline('quit')
             videoplayer2.close()
             videoplayer1 = pexpect.spawn(
